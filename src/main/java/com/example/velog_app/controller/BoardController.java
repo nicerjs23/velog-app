@@ -2,12 +2,14 @@ package com.example.velog_app.controller;
 
 import com.example.velog_app.domain.Board;
 import com.example.velog_app.repository.BoardRepository;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+@CrossOrigin(origins="http://localhost:5173")
 @RestController
 public class BoardController {
     private final BoardRepository boardRepository;
