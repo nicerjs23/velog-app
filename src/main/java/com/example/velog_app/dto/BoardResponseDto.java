@@ -10,15 +10,19 @@ public class BoardResponseDto {
     private String writerName;
     private String writerProfileUrl;
     private int heartCount;
+    private String createdAt;       // 추가
+    private int commentCount;       // 추가
 
-    public BoardResponseDto(Board board) {
+    public BoardResponseDto(Board board,  String serverBaseUrl) {
         this.id = board.getId();
         this.title = board.getTitle();
         this.content = board.getContent();
-        this.thumbnailUrl = board.getThumbnailUrl();
+        this.thumbnailUrl = serverBaseUrl + board.getThumbnailUrl();
         this.writerName = board.getWriterName();
-        this.writerProfileUrl = board.getWriterProfileUrl();
+        this.writerProfileUrl = serverBaseUrl + board.getWriterProfileUrl();
         this.heartCount = board.getHeartCount();
+        this.createdAt = board.getCreatedAt();       // 추가
+        this.commentCount = board.getCommentCount(); // 추가
     }
 
     public Long getId() {
@@ -48,4 +52,6 @@ public class BoardResponseDto {
     public int getHeartCount() {
         return heartCount;
     }
+    public String getCreatedAt() { return createdAt; }
+    public int getCommentCount() { return commentCount; }
 }
