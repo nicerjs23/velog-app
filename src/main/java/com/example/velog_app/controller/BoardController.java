@@ -12,7 +12,7 @@ import java.util.List;
 import com.example.velog_app.dto.BoardResponseDto;
 import java.util.stream.Collectors;
 
-@CrossOrigin(origins="http://localhost:5173")
+@CrossOrigin(origins={"http://localhost:5173","http://localhost:5174"})
 @RestController
 public class BoardController {
     private final BoardRepository boardRepository;
